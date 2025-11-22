@@ -1,13 +1,6 @@
-//
-// Created by Henry Hicks on 11/17/25.
-//
-
-
-#include "CLIManager.hpp"
+#include <iostream>
 
 int main() {
-    cli::CLIManager cli;
-
-    cli.RunInteractiveSetup();
+    std::cout << "Lambda Physics Engine stub\n";
     return 0;
 }
