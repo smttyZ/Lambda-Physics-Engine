@@ -1,0 +1,3 @@
+[submodule "external/kalon"]
+	path = external/kalon
+	url = https://github.com/smttyZ/kalon
