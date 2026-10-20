@@ -10,15 +10,16 @@ A deterministic C++23 physics engine for research, built on the [kalon](https://
 |---|---|
 | `engine/`: `PhysicsWorld` (`Initialize`, `Step(kalon::Real dt)`) | 🚧 Interface in place; no simulation yet |
 | `scenes/`: `IScene`, `SceneFactory`, `SEmpty`, `SCradle` (pull-back angle) | 🚧 Factory works; scenes don't create bodies yet |
-| `cli/`: interactive setup (timestep, ASCII mode, scene) | ✅ Works |
+| `cli/`: interactive setup (timestep, ASCII mode, scene) | ✅ Works. `ArgParser` for command-line flags is included but not wired up yet |
 | kalon (`kalon::Real` for physical quantities) | ✅ Git submodule, linked through `engine` |
-| `ipc/`: layer for GUI / remote control | Planned (`-DBUILD_IPC=ON`), no sources yet |
 | `tests/`: unit + integration | Planned, empty |
 
 ## Design direction
 - **Deterministic:** the same scene and timestep always produce the same result.
 - **Scenes as presets:** each scene sets up the world for one experiment, so the engine doesn't special-case any of them.
 - **Strict numerics:** physical quantities go through `kalon::Real`, which rejects NaN and infinity at the point they would appear.
+
+See [ROADMAP.md](ROADMAP.md) for what's next.
 
 ## Building
 Requires CMake ≥ 3.25 and a C++23 compiler (tested with GCC 13 and Clang 18). Warnings are errors by default (`-DENABLE_WARNINGS_AS_ERRORS=OFF` to relax).

@@ -8,7 +8,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 option(ENABLE_WARNINGS_AS_ERRORS "Treat warnings as errors" ON)
 option(ENABLE_CLANG_TIDY "Run clang-tidy if available" OFF)
-option(BUILD_IPC "Build IPC layer for GUI/remote control" OFF)
 option(BUILD_TESTS "Build tests" ON)
 
 # Common warning flags
@@ -31,9 +30,6 @@ endif()
 add_subdirectory(external/kalon)   # vendored interface lib
 add_subdirectory(engine)
 add_subdirectory(scenes)
-if (BUILD_IPC)
-    add_subdirectory(ipc)
-endif()
 add_subdirectory(cli)
 
 if (BUILD_TESTS)
@@ -45,7 +41,6 @@ endif()
 add_executable(lambda_physics src/main.cpp)
 target_link_libraries(lambda_physics
     PRIVATE engine scenes cli
-    $<$<BOOL:${BUILD_IPC}>:ipc>
 )
 
 target_include_directories(lambda_physics
