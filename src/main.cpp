@@ -1,13 +1,9 @@
-//
-// Created by Henry Hicks on 11/17/25.
-//
-
-
-#include "CLIManager.hpp"
+#include "cli/CLIManager.hpp"
 
 int main() {
     cli::CLIManager cli;
-
-    cli.RunInteractiveSetup();
+    if (!cli.RunInteractiveSetup()) {
+        return 1;
+    }
     return 0;
 }
