@@ -1,5 +1,6 @@
 add_library(scenes STATIC
     src/SceneFactory.cpp
+    src/SCradle.cpp
 )
 
 target_include_directories(scenes

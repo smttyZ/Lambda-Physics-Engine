@@ -1,6 +1,9 @@
-#include <iostream>
+#include "cli/CLIManager.hpp"
 
 int main() {
-    std::cout << "Lambda Physics Engine stub\n";
+    cli::CLIManager cli;
+    if (!cli.RunInteractiveSetup()) {
+        return 1;
+    }
     return 0;
 }
